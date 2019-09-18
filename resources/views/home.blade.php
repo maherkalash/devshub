@@ -4,17 +4,18 @@
 
 
     <!--Banner Section-->
-    <section class="banner-section" id="home-banner" style="background-image:url(images/background/13.png)">
+    
+    <section class="banner-section" id="home-banner" style="background-image:url( {{voyager::image($slider->first_image)}} )">
         <div class="auto-container">
             <div class="clearfix">
                 <div class="content">
-                    <h1>Creative to plan <br> your business</h1>
-                    <div class="text">Increase productivity with simple to-do app. app to manage <br> your personal budgets.</div>
-                    <a href="#" class="theme-btn btn-style-one">Getting start now</a>
+                    <h1> {{ $slider->title }} </h1>
+                    <div class="text">  {{ $slider->description }}</div>
+                    <a href="{{ $slider->link }}" class="theme-btn btn-style-one">{{ $slider->link_text }} </a>
                 </div>
                 <div class="image-box">
                     <figure class="image">
-                        <img src="images/resource/1.png" alt="">
+                        <img src="{{ voyager::image($slider->second_image) }}" alt="">
                     </figure>
                 </div>
             </div>

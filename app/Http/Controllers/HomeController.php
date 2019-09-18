@@ -12,12 +12,14 @@ class HomeController extends Controller
     public function index()
     {
         $language = Session::get('locale');
-
-
-//        $sliders  = Slider::where('featured', true)->orderBy('order','Asc')->limit(4)->get();//->translate(  $language, 'fallbackLocale');
-//        $news  	  = Post::where('featured', true)->orderBy('id','Desc')->limit(4)->get();//->translate(  $language, 'fallbackLocale');
+        $slider  = Slider::where('active', true)->first()->translate($language, 'fallbackLocale');;
+        
+        
+        // dd($slider);
+        // $sliders = Slider::where('featured', true)->orderBy('order','Asc')->limit(4)->get();//->translate(  $language, 'fallbackLocale');
+        // $news = Post::where('featured', true)->orderBy('id','Desc')->limit(4)->get();//->translate(  $language, 'fallbackLocale');
         $title = 'Home';
-        return view('home' ,compact(['title']));
+        return view('home' ,compact(['title' , 'slider']));
 
     }
 

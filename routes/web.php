@@ -38,7 +38,4 @@ Auth::routes();
 Route::middleware('auth')->group(function () {
     Route::get('/my-profile', 'UsersController@edit')->name('users.edit');
     Route::patch('/my-profile', 'UsersController@update')->name('users.update');
-    Route::patch('/info_update', 'UsersController@info_update')->name('users.info_update');
-    Route::get('/my-orders', 'OrdersController@index')->name('orders.index');
-    Route::get('/my-orders/{order}', 'OrdersController@show')->name('orders.show');
 });
